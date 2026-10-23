@@ -5,14 +5,16 @@ object verstappen {
     var pGanados = 0
     var vueltasConLosNeumaticos = 0
     var vueltaRapida = false 
+    var tipoDeNeumatico = blando
  
     const pIniciales = 437
     const property escuderia = redBull
 
+    method cambiarNeumaticoTipo(tipo){ tipoDeNeumatico = tipo}
     method puntos() = pGanados + pIniciales
     method ganarUnaCarrera(){ pGanados += 25}
     method hizoVueltaRapida(){vueltaRapida = true if (self.puntos() > 200 ) pGanados += 1}
-    method sumarUnaVuelta(tipo){ vueltasConLosNeumaticos += 1}
+    method sumarUnaVuelta(){ vueltasConLosNeumaticos += 1}
     method entrarALosPitStop(){vueltasConLosNeumaticos = 0}
     method vueltasQueLeQuedan(tipo){ tipo.duracion()}
 }
